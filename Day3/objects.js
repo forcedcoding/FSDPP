@@ -53,6 +53,57 @@ for (let prop in obj) {
 }
 
 
+//ARRAY
+// Creating an array
+const fruits = ['apple', 'banana', 'orange', 'mango'];
+
+// Accessing array elements
+console.log(fruits); // Logs the entire array
+console.log(fruits[0]); // Logs 'apple'
+console.log(fruits[1]); // Logs 'banana'
+console.log(fruits[2]); // Logs 'orange'
+console.log(fruits[3]); // Logs 'mango'
+
+// Modifying array elements
+fruits[1] = 'pear';
+console.log(fruits[1]); // Logs 'pear'
+
+// Adding elements to an array
+fruits.push('grape');
+console.log(fruits); // Logs ['apple', 'pear', 'orange', 'mango', 'grape']
+
+// Removing elements from an array
+fruits.pop();
+console.log(fruits); // Logs ['apple', 'pear', 'orange', 'mango']
+
+// Looping through array elements
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+// Looping through array elements using forEach method
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+
+// Looping through array elements using arrow function
+fruits.forEach(fruit => console.log(fruit));
+
+// Creating an array of objects
+const people = [
+  { name: 'John', age: 30 },
+  { name: 'Jane', age: 25 },
+  { name: 'Jack', age: 35 }
+];
+
+// Accessing array elements
+console.log(people); // Logs the entire array
+console.log(people[0]); // Logs { name: 'John', age: 30 }
+console.log(people[0].name); // Logs 'John'
+console.log(people[0].age); // Logs 30
+
+
+
 
 
 
