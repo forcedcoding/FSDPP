@@ -1,17 +1,58 @@
+// Creating an object
 const obj = {
-  name: 'John',
-  age: 30,
-  city: 'New York',
+  name: 'John', // Property with a string value
+  age: 30, // Property with a number value
+  city: 'New York', // Property with a string value
 
+  // Nested object
   address: {
-        street: '123 Main St',
-        zip: 10001
-    }   
+    street: '123 Main St', // Property within a nested object
+    zip: 10001 // Property within a nested object
+  },
+
+  // Method (function) within an object
+  greet: function() {
+    console.log('Hello, my name is ' + this.name);
+  }
 };
-console.log(obj);
 
-console.log(obj.name);
+// Accessing object properties
+console.log(obj); // Logs the entire object
+console.log(obj.name); // Logs 'John'
+console.log(obj.age); // Logs 30
+console.log(obj.city); // Logs 'New York'
+console.log(obj.address.street); // Logs '123 Main St'
+console.log(obj.address.zip); // Logs 10001
 
+// Calling a method within an object
+obj.greet(); // Logs 'Hello, my name is John'
 
+// Accessing object properties using bracket notation
 const key = prompt('What do you want to know about the user? Choose between name, age, city, address, street, zip');
-console.log(obj[key]);
+if (key in obj) {
+  console.log(obj[key]); // Logs the value of the property specified by the user
+} else if (key in obj.address) {
+  console.log(obj.address[key]); // Logs the value of the nested property specified by the user
+} else {
+  console.log('Property not found');
+}
+
+// Adding a new property to an object
+obj.email = 'john@example.com';
+console.log(obj.email); // Logs 'john@example.com'
+
+// Deleting a property from an object
+delete obj.city;
+console.log(obj.city); // Logs 'undefined'
+
+// Looping through object properties
+for (let prop in obj) {
+  if (obj.hasOwnProperty(prop)) {
+    console.log(prop + ': ' + obj[prop]);
+  }
+}
+
+
+
+
+
