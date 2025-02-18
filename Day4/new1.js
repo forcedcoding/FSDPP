@@ -48,6 +48,16 @@ const calculatePercentage = (marks) => {
     return (totalMarks / (marks.length * 100)) * 100;
 };
 
+// creating a function that calculates highest and lowest marks with subject name
+const getHighestAndLowestMarks = (marks) => {
+    let max = Math.max(...marks);
+    let index = marks.indexOf(max);
+    console.log(`Highest marks in ${marks[index]} : ${max}`);
+    let min = Math.min(...marks);
+    index = marks.indexOf(min);
+    console.log(`Lowest marks in ${marks[index]} : ${min}`);
+};
+
 const getUserInputAndCalculatePercentage = () => {
     const numofSub = getMetaData();
     const marks = getSubjectsInfo(numofSub);
@@ -56,6 +66,7 @@ const getUserInputAndCalculatePercentage = () => {
         console.log(`Subject ${i + 1} : ${marks[i]}`);
     };
     console.log("final percentage: " + percentage + "%");
+    getHighestAndLowestMarks(marks);
 };
 
 getUserInputAndCalculatePercentage();
