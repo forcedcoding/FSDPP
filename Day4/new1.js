@@ -1,22 +1,21 @@
-const sum = (a,b) => {
-    const ans = a + b;
-    return ans;
-};
+// const sum = (a,b) => {
+//     const ans = a + b;
+//     return ans;
+// };
 
-const printPretty = (txt) => {
-    console.log("----------------------");
-    console.log(txt);
-    console.log("----------------------");
-};
+// const printPretty = (txt) => {
+//     console.log("----------------------");
+//     console.log(txt);
+//     console.log("----------------------");
+// };
 
-sum(2,3);
-console.log(sum(2,3));
-console.log(printPretty("Hello World!"));
-printPretty("Hello World!");
-// What is the output of this code?
-// a) 5
-// b) Hello World!
-// c) ----------------------
+// sum(2,3);
+// console.log(sum(2,3));
+// console.log(printPretty("Hello World!"));
+// printPretty("Hello World!");
+
+
+
 
 
 const getMetaData = () => {
@@ -27,6 +26,13 @@ const getMetaData = () => {
     const numofSub = parseInt(prompt("Number of Subjects : "));
     return numofSub;
 };
+
+
+
+
+
+
+
 
 const getSubjectsInfo = (num) => {
     let marks = [];
@@ -40,6 +46,11 @@ const getSubjectsInfo = (num) => {
     return marks;
 };
 
+
+
+
+
+
 const calculatePercentage = (marks) => {
     let totalMarks = 0;
     for (let mark of marks) {
@@ -48,7 +59,9 @@ const calculatePercentage = (marks) => {
     return (totalMarks / (marks.length * 100)) * 100;
 };
 
-// creating a function that calculates highest and lowest marks with subject name
+
+
+
 const getHighestAndLowestMarks = (marks) => {
     let max = Math.max(...marks);
     let index = marks.indexOf(max);
@@ -57,6 +70,11 @@ const getHighestAndLowestMarks = (marks) => {
     index = marks.indexOf(min);
     console.log(`Lowest marks in ${marks[index]} : ${min}`);
 };
+
+
+
+
+
 
 const getUserInputAndCalculatePercentage = () => {
     const numofSub = getMetaData();
