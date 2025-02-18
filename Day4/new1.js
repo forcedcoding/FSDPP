@@ -17,3 +17,45 @@ printPretty("Hello World!");
 // a) 5
 // b) Hello World!
 // c) ----------------------
+
+
+const getMetaData = () => {
+    const name = prompt("Name : ");
+    console.log("Name : " + name);
+    const age = prompt("Age : ");
+    console.log("Age : " + age);
+    const numofSub = parseInt(prompt("Number of Subjects : "));
+    return numofSub;
+};
+
+const getSubjectsInfo = (num) => {
+    let marks = [];
+    let nameSub = [];
+    for (let i = 0; i < num; i++) {
+        let nameofSub = prompt(`Enter name of subject ${i + 1} : `);
+        let mark = parseFloat(prompt(`Enter mark for subject ${i + 1} : `));
+        nameSub.push(nameofSub);
+        marks.push(mark);
+    }
+    return marks;
+};
+
+const calculatePercentage = (marks) => {
+    let totalMarks = 0;
+    for (let mark of marks) {
+        totalMarks += mark;
+    }
+    return (totalMarks / (marks.length * 100)) * 100;
+};
+
+const getUserInputAndCalculatePercentage = () => {
+    const numofSub = getMetaData();
+    const marks = getSubjectsInfo(numofSub);
+    const percentage = calculatePercentage(marks);
+    for (let i = 0; i < numofSub; i++) {
+        console.log(`Subject ${i + 1} : ${marks[i]}`);
+    };
+    console.log("final percentage: " + percentage + "%");
+};
+
+getUserInputAndCalculatePercentage();
