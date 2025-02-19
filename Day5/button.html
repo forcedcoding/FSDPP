@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative DOM Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .magic-button {
+            position: absolute;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.4s ease-in-out;
+            background-color: #ff4757;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .magic-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="magicButton" class="magic-button">Click Me!</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const button = document.getElementById("magicButton");
+
+            // Load stored color if available
+            const savedColor = localStorage.getItem("buttonColor");
+            if (savedColor) button.style.backgroundColor = savedColor;
+
+            button.addEventListener("click", function () {
+                // Random color
+                const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+                button.style.backgroundColor = randomColor;
+
+                // Save color in localStorage
+                localStorage.setItem("buttonColor", randomColor);
+
+                // Change text randomly
+                const texts = ["Hello!", "Press Again!", "Wow!", "Keep Clicking!", "Fun!"];
+                button.textContent = texts[Math.floor(Math.random() * texts.length)];
+
+                // Move to a random position
+                const x = Math.random() * (window.innerWidth - button.clientWidth);
+                const y = Math.random() * (window.innerHeight - button.clientHeight);
+                button.style.left = `${x}px`;
+                button.style.top = `${y}px`;
+            });
+
+            button.addEventListener("mouseover", function () {
+                button.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.4)";
+            });
+
+            button.addEventListener("mouseout", function () {
+                button.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.2)";
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    // Duplicate button
+                    const clone = button.cloneNode(true);
+                    document.body.appendChild(clone);
+                    clone.style.left = `${Math.random() * (window.innerWidth - clone.clientWidth)}px`;
+                    clone.style.top = `${Math.random() * (window.innerHeight - clone.clientHeight)}px`;
+
+                    clone.addEventListener("click", function () {
+                        const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+                        clone.style.backgroundColor = randomColor;
+                        clone.textContent = texts[Math.floor(Math.random() * texts.length)];
+                        clone.style.left = `${Math.random() * (window.innerWidth - clone.clientWidth)}px`;
+                        clone.style.top = `${Math.random() * (window.innerHeight - clone.clientHeight)}px`;
+                    });
+                } else if (event.key === "Backspace") {
+                    // Remove button if more than one exists
+                    if (document.getElementsByClassName("magic-button").length > 1) {
+                        document.body.removeChild(document.getElementsByClassName("magic-button")[1]);
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

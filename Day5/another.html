@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Dynamic Website</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+        }
+
+        .dark-mode {
+            --bg-color: #222;
+            --text-color: #f4f4f4;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--primary-color);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 60px;
+            width: 250px;
+            height: 100vh;
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            transition: left 0.3s;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        #searchBar {
+            padding: 10px;
+            width: 50%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 80%;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 0.5s;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            cursor: pointer;
+            padding: 10px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <span class="menu-toggle">☰ Menu</span>
+        <span>Advanced Web</span>
+        <button id="themeToggle" class="toggle-btn">Toggle Dark Mode</button>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <p>Navigation</p>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Live Search...">
+    </div>
+
+    <!-- Dropdown -->
+    <div class="dropdown">
+        <label for="dropdown">Choose an option:</label>
+        <select id="dropdown">
+            <option value="option1">Select Option 1</option>
+            <option value="option2">Select Option 2</option>
+            <option value="option3">Select Option 3</option>
+        </select>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <button id="startProgress" class="toggle-btn">Start Progress</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="modal">
+        <p>This is a modal popup</p>
+        <button id="closeModal" class="toggle-btn">Close</button>
+    </div>
+    <button id="openModal" class="toggle-btn">Open Modal</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("sidebar");
+            document.querySelector(".menu-toggle").addEventListener("click", () => sidebar.classList.toggle("active"));
+
+            // Dark Mode Toggle
+            const themeToggle = document.getElementById("themeToggle");
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+            });
+
+            if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark-mode");
+
+            // Progress Bar Animation
+            document.getElementById("startProgress").addEventListener("click", () => {
+                document.getElementById("progress").style.width = "100%";
+                setTimeout(() => document.getElementById("progress").style.width = "0%", 2000);
+            });
+
+            // Modal
+            const modal = document.getElementById("modal");
+            const overlay = document.getElementById("modalOverlay");
+            document.getElementById("openModal").addEventListener("click", () => {
+                modal.classList.add("active");
+                overlay.classList.add("active");
+            });
+
+            document.getElementById("closeModal").addEventListener("click", () => {
+                modal.classList.remove("active");
+                overlay.classList.remove("active");
+            });
+        });
+    </script>
+
+</body>
+</html>

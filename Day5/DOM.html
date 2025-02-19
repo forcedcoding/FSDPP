@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add & Delete Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 5px;
+            width: 250px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Dynamic Add & Delete Elements</h2>
+
+    <input type="text" id="itemInput" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="clearAll()">Clear All</button>
+
+    <ul id="itemList"></ul>
+
+    <script>
+        function addItem() {
+            const input = document.getElementById("itemInput");
+            const itemText = input.value.trim();
+
+            if (itemText === "") {
+                alert("Please enter an item.");
+                return;
+            }
+
+            const ul = document.getElementById("itemList");
+
+            // Create list item
+            const li = document.createElement("li");
+            li.textContent = itemText;
+
+            // Create delete button
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "❌";
+            deleteBtn.classList.add("delete-btn");
+            deleteBtn.onclick = function () {
+                li.remove();
+            };
+
+            // Append delete button to list item
+            li.appendChild(deleteBtn);
+            ul.appendChild(li);
+
+            // Clear input field
+            input.value = "";
+        }
+
+        function clearAll() {
+            document.getElementById("itemList").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
