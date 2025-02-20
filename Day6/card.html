@@ -140,9 +140,19 @@
             deleteBtn.addEventListener('click', function() {
                 card.remove();
             });
-
             cardCounter++; // Increment counter for unique numbers
         });
+        document.addEventListener('keydown', function(event) {
+                if (event.key === "Delete") { // Check if "Delete" key is pressed
+                    const cardContainer = document.getElementById('card-container');
+                    const cards = document.querySelectorAll('.card');
+                
+                    if (cards.length > 0) {
+                        const lastCard = cards[cards.length - 1]; // Get last added card
+                        lastCard.remove(); // Remove the last card
+                    }
+                }
+            });
     </script>
 </body>
 </html>
