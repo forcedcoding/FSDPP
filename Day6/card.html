@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        #add-card-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 150px;
+            height: 100px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.269);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+            box-shadow: 3px 3px 12px 5px rgba(0, 0, 0, 0.452);
+        }
+
+        .delete-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.1s;
+        }
+        .delete-btn:hover{
+            background-color: green;
+            cursor: pointer;
+        }
+        .cardh2{
+            color: rgb(0, 0, 0);
+            width: 90%;
+            background-color: aliceblue;
+            border-radius: 15px;
+            font-size: 25px;
+            padding: 5px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Dynamic Card Generator</h1>
+    <button id="add-card-btn">Add Card</button>
+    <div id="card-container"></div>
+
+    <script>
+        let cardCounter = 1; // To ensure each card has a unique number
+
+        document.getElementById('add-card-btn').addEventListener('click', function() {
+            const cardContainer = document.getElementById('card-container');
+
+            // Create card div
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.textContent = `Card ${cardCounter}`;
+
+            // Create delete button
+            // const deleteBtn = document.createElement('button');
+            // deleteBtn.classList.add('delete-btn');
+            // deleteBtn.textContent = 'X';
+
+            // Append delete button to card
+            // card.appendChild(deleteBtn);
+            cardContainer.appendChild(card);
+
+            //creating my own custom CARD
+            card.innerHTML = `
+                <style>
+                    .card{
+                        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+                        width: 200px;
+                        height: 150px;
+                        color: #333;
+                        border : none;
+                        border-radius: 10px;
+                        margin: 10px;
+                        padding: 10px;
+                    }
+                    .delete-btn{
+                        background-color: red;
+                    }
+                    p{
+                        color: blue;
+                        font-size: 20px;
+                    }
+                </style>
+                <h2 class="cardh2">Card ${cardCounter}</h2>
+                <p>This is a custom card</p>
+                <button class="delete-btn">X</button>
+                
+            `; 
+            let deleteBtn = card.querySelector('.delete-btn');
+            // Add event listener to delete the card
+            deleteBtn.addEventListener('click', function() {
+                card.remove();
+            });
+
+            cardCounter++; // Increment counter for unique numbers
+        });
+    </script>
+</body>
+</html>

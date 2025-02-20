@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Button Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            color: rgb(255, 174, 0);
+            color: rgb(200, 255, 0);
+        }
+
+        #game-container {
+            position: relative;
+            width: 90vw;
+            height: 80vh;
+            margin: auto;
+            border: 2px solid black;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        #moving-button {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #score, #timer {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        #start-btn {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #moving-button{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>AIMLABS</h1>
+    <p id="score">Score: 0</p>
+    <p id="timer">Time Left: 30s</p>
+    <button id="start-btn">Start Game</button>
+    <div id="game-container">
+        <button id="moving-button"></button>
+    </div>
+
+    <script>
+        let score = 0;
+        let timeLeft = 30;
+        let gameInterval, moveInterval;
+        let gameActive = false;
+
+        const scoreDisplay = document.getElementById('score');
+        const timerDisplay = document.getElementById('timer');
+        const startBtn = document.getElementById('start-btn');
+        const movingButton = document.getElementById('moving-button');
+        const gameContainer = document.getElementById('game-container');
+
+        function getRandomPosition() {
+            const maxX = gameContainer.clientWidth - movingButton.clientWidth;
+            const maxY = gameContainer.clientHeight - movingButton.clientHeight;
+            const x = Math.floor(Math.random() * maxX);
+            const y = Math.floor(Math.random() * maxY);
+            return { x, y };
+        }
+
+        function moveButton() {
+            if (!gameActive) return;
+            let pos = getRandomPosition();
+            movingButton.style.left = pos.x + 'px';
+            movingButton.style.top = pos.y + 'px';
+        }
+
+        function startGame() {
+            if (gameActive) return;
+            gameActive = true;
+            score = 0;
+            timeLeft = 30;
+            scoreDisplay.innerText = `Score: ${score}`;
+            timerDisplay.innerText = `Time Left: ${timeLeft}s`;
+            movingButton.style.display = 'block';
+            startBtn.style.display = 'none';
+
+            gameInterval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.innerText = `Time Left: ${timeLeft}s`;
+                if (timeLeft <= 0) endGame();
+            }, 1000);
+
+            moveInterval = setInterval(moveButton, 1000);
+        }
+
+        function endGame() {
+            gameActive = false;
+            clearInterval(gameInterval);
+            clearInterval(moveInterval);
+            movingButton.style.display = 'none';
+            startBtn.style.display = 'block';
+            alert(`Game Over! Your final score: ${score}`);
+        }
+
+        movingButton.addEventListener('click', () => {
+            if (!gameActive) return;
+            score++;
+            scoreDisplay.innerText = `Score: ${score}`;
+            moveButton(); // Move immediately after clicking
+        });
+
+        startBtn.addEventListener('click', startGame);
+    </script>
+</body>
+</html>
