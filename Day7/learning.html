@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        .popup{
+            display: none;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" id="a1">
+        Hover here
+        <div class="popup" id="a2">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let main = document.getElementById('a1');
+        let popup = document.getElementById('a2');
+
+        main.addEventListener('mouseover', function(){
+            popup.style.display = 'block';
+        })
+
+        main.addEventListener('mouseout', function(){
+            popup.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

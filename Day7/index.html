@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Block</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .popup {
+            display: none;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Show Message</button>
+    <div id="popup" class="popup">
+        <p>Hello, this is your pop-up block!</p>
+    </div>
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var popup = document.getElementById('popup');
+            if (popup.style.display === 'none' || popup.style.display === '') {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        #add-card-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: green;
+        }
+
+        .cardh2 {
+            width: 90%;
+            background-color: aliceblue;
+            border-radius: 15px;
+            font-size: 20px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Card Generator</h1>
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="text" id="city" placeholder="Enter city">
+    <label for="dataList">Select City:</label>
+    <select id="dataList">
+        <option value="all" selected>Show All</option>
+    </select>
+    <button id="add-card-btn">Create Card</button>
+    <div id="card-container"></div>
+
+    <script>
+        let cardCounter = 1;
+        let cityCardMap = new Map();
+
+        document.getElementById('add-card-btn').addEventListener('click', function() {
+            const name = document.getElementById('name').value.trim();
+            const city = document.getElementById('city').value.trim();
+
+            if (!name || !city) {
+                alert("Please enter both Name and City");
+                return;
+            }
+
+            // Create card div
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.setAttribute('data-city', city); // Store city as a data attribute
+            card.innerHTML = `
+                <h2 class="cardh2">Card ${cardCounter}</h2>
+                <p>Name: ${name}</p>
+                <p>City: ${city}</p>
+                <button class="delete-btn">X</button>
+            `;
+
+            document.getElementById('card-container').appendChild(card);
+
+            // Add city to select dropdown if not already added
+            if (!cityCardMap.has(city)) {
+                const option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                document.getElementById('dataList').appendChild(option);
+                cityCardMap.set(city, 1);
+            } else {
+                cityCardMap.set(city, cityCardMap.get(city) + 1);
+            }
+
+            // Attach delete functionality
+            card.querySelector('.delete-btn').addEventListener('click', function() {
+                removeCard(card, city);
+            });
+
+            cardCounter++;
+        });
+
+        function removeCard(card, city) {
+            card.remove();
+
+            // Reduce city count and remove from dropdown if no cards left for that city
+            if (cityCardMap.has(city)) {
+                let count = cityCardMap.get(city);
+                if (count === 1) {
+                    cityCardMap.delete(city);
+                    removeCityFromDropdown(city);
+                } else {
+                    cityCardMap.set(city, count - 1);
+                }
+            }
+        }
+
+        function removeCityFromDropdown(city) {
+            const select = document.getElementById('dataList');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === city) {
+                    select.remove(i);
+                    break;
+                }
+            }
+        }
+
+        // Event listener for dropdown to filter cards
+        document.getElementById('dataList').addEventListener('change', function() {
+            const selectedCity = this.value;
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                if (selectedCity === "all" || card.getAttribute('data-city') === selectedCity) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Select</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .popup {
+            display: none;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="text" id="city" placeholder="Enter city">
+    <button id="addButton">Add Data</button>
+    <label for="dataList">New</label>
+    <select id="dataList">
+        <option value="" disabled selected>Select a name</option>
+    </select>
+    <div id="popup" class="popup"></div>
+
+    <script>
+        let dataSet = new Map();
+
+        document.getElementById('addButton').addEventListener('click', function() {
+            let name = document.getElementById('name').value.trim();
+            let city = document.getElementById('city').value.trim();
+            
+            if (name && city) {
+                dataSet.set(name, city);
+                
+                let select = document.getElementById('dataList');
+                let option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                select.appendChild(option);
+            }
+        });
+
+        document.getElementById('dataList').addEventListener('change', function() {
+            let selectedName = this.value;
+            let city = dataSet.get(selectedName);
+            let popup = document.getElementById('popup');
+            popup.textContent = `Name: ${selectedName}, City: ${city}`;
+            popup.style.display = 'flex';
+            popup.style.justifyContent = 'center';
+            popup.style.alignItems = 'center';
+        });
+    </script>
+</body>
+</html>
