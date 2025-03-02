@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Clone</title>
+    <script src="https://kit.fontawesome.com/a20120fcea.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="head">
+        <div class="logo">
+            <img src="./Images/betteryoutubelogo.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search">
+            <button class="search-button">‎ 
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <button class="theme-toggle">Dark Mode</button>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="to-fix">
+                <div class="home"><i class="fa-solid fa-house"></i> Home</div>
+                <div class="explore"><i class="fa-solid fa-compass"></i> Explore</div>
+                <div class="subscription"><i class="fa-solid fa-tv"></i> Subscription</div>
+                <div class="user"><i class="fa-solid fa-user"></i> User</div>
+            </div>
+        </div>
+
+        <div class="container" id="videoContainer"></div>
+    </div>
+    <script src="script.js" ></script>
+</body>
+</html>
