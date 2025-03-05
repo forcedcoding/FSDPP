@@ -1,14 +1,4 @@
-4297
-71C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\posthtml-parser\license133856415820419090 0
-74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\utils\lib\index.js133856415826630606 0
-80C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\esm\_export_star.js133856415828573241 0
-90C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\cjs\_ts_dispose_resources.cjs133856415827441206 0
-88C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\reporter-cli\src\bundleReport.js133856415821260785 0
-60C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\import-fresh133856415822308039 1
-93C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\optimizer-htmlnano\src\svgMappings.js133856415822738466 0
-70C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\to-regex-range\LICENSE133856415821496981 0
-41C:\Users\SHASH\Desktop\FSDPP\Day12\app.js133856447932925452 0
-74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\watcher\src\shared133856415825409386 1
+4298
 56C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\get-port133856415822408759 1
 96C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\cjs\_ts_add_disposable_resource.cjs133856415827441206 0
 84C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\feature-flags\lib\types.d.ts133856415823440783 0
@@ -21,6 +11,7 @@
 87C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\_\_class_private_field_set133856415830087599 1
 65C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\has-flag\index.js133856415821496981 0
 111C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\test\fixtures\invalid-source-not-file\package.json133856415829839595 0
+45C:\Users\SHASH\Desktop\FSDPP\Day12\.gitignore133856452770154054 0
 90C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\htmlnano\docs\versioned_docs\version-2.0.0133856415827229032 1
 57C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\env-paths133856415822323826 1
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\caniuse-lite\data\regions\WF.js133856415836494366 0
@@ -29,12 +20,22 @@
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\caniuse-lite\data\regions\IT.js133856415832745765 0
 76C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\type-fest\source\except.d.ts133856415824426532 0
 80C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\utils\src\relativeUrl.js133856415827147885 0
-39C:\Users\SHASH\Desktop\FSDPP\Day12\dist133856447933604657 1
+39C:\Users\SHASH\Desktop\FSDPP\Day12\dist133856452002309894 1
 58C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\is-extglob133856415821921117 1
 97C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\Doxyfile133856415823440783 0
 60C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\htmlnano\lib133856415827441206 1
 55C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\timsort133856415823324420 1
 91C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\reporter-cli\lib\CLIReporter.js.map133856415825262775 0
+71C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\posthtml-parser\license133856415820419090 0
+74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\utils\lib\index.js133856415826630606 0
+80C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\esm\_export_star.js133856415828573241 0
+90C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\cjs\_ts_dispose_resources.cjs133856415827441206 0
+88C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\reporter-cli\src\bundleReport.js133856415821260785 0
+60C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\import-fresh133856415822308039 1
+93C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\optimizer-htmlnano\src\svgMappings.js133856415822738466 0
+70C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\to-regex-range\LICENSE133856415821496981 0
+41C:\Users\SHASH\Desktop\FSDPP\Day12\app.js133856451996268072 0
+74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\watcher\src\shared133856415825409386 1
 61C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\tslib\modules133856415823939970 1
 90C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\_\_object_spread\package.json133856415830819291 0
 68C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\env-paths\index.d.ts133856415822421955 0
@@ -276,9 +277,6 @@
 93C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\_\_array_with_holes\package.json133856415829323951 0
 55C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\globals133856415822926525 1
 85C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\_\_defaults\package.json133856415830339580 0
-64C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\msgpackr-extract133856415823063491 1
-70C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\color-convert\index.js133856415822095317 0
-53C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\tslib133856415824274669 1
 59C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\is-arrayish133856415823214772 1
 86C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\dom-serializer\lib\esm\foreignNames.js133856415821260785 0
 104C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\scheduler\cjs\scheduler-unstable_post_task.production.js133856415446621726 0
@@ -316,6 +314,9 @@
 72C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\esm\_jsx.js133856415828814564 0
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\entities\lib\esm\index.d.ts.map133856415826630606 0
 93C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\posthtml\node_modules\domutils\lib\index.d.ts133856415825146118 0
+64C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\msgpackr-extract133856415823063491 1
+70C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\color-convert\index.js133856415822095317 0
+53C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\tslib133856415824274669 1
 68C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\json5\lib\require.js133856415823440783 0
 72C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\domhandler\lib\node.d.ts133856415824650298 0
 62C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\node-addon-api133856415825146118 1
@@ -479,12 +480,12 @@
 90C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\esm\_await_async_generator.js133856415828003059 0
 92C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\posthtml\node_modules\entities\lib\encode.js133856415823440783 0
 98C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\caniuse-lite\data\features\css-overflow-overlay.js133856415829755934 0
-100C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\posthtml\node_modules\htmlparser2\lib\Tokenizer.d.ts133856415824743806 0
-74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\_\_call_super133856415829755934 1
-74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\js-yaml\lib\schema\json.js133856415824943501 0
 68C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\weak-lru-cache\tests133856415822760079 1
 84C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\watcher\src\watchman\BSER.hh133856415825534654 0
 108C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\cjs\_class_static_private_field_destructure.cjs133856415825924130 0
+74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\_\_call_super133856415829755934 1
+74C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\js-yaml\lib\schema\json.js133856415824943501 0
+100C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\posthtml\node_modules\htmlparser2\lib\Tokenizer.d.ts133856415824743806 0
 88C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\posthtml-parser\dist\location-tracker.js133856415821674122 0
 73C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\dotenv-expand\config.d.ts133856415823194404 0
 81C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\weak-lru-cache\tests\benchmark.js133856415821421032 0
@@ -2220,7 +2221,6 @@
 77C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\htmlnano\docs\babel.config.js133856415825924130 0
 66C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\htmlnano\docs\docs133856415827229032 1
 81C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\htmlnano\docs\docs\050-modules.md133856415827162516 0
-87C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\dumpGraphToGraphViz.js133856415827229032 0
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\htmlnano\docs\package-lock.json133856415826588832 0
 78C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@swc\helpers\esm\_ts_values.js133856415829088725 0
 71C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\htmlnano\docs\README.md133856415827318649 0
@@ -4170,6 +4170,7 @@
 82C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\src\public\Symbols.js133856415828939539 0
 78C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\assetUtils.js133856415826088163 0
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\BundleGraph.js133856415826478002 0
+87C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\dumpGraphToGraphViz.js133856415827229032 0
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\Environment.js133856415827318649 0
 73C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\index.js133856415827441206 0
 82C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\InternalConfig.js133856415827594326 0
@@ -4203,7 +4204,7 @@
 80C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\public\Asset.js133856415825262775 0
 81C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\public\Bundle.js133856415826247227 0
 86C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\public\BundleGraph.js133856415826503044 0
-50C:\Users\SHASH\Desktop\FSDPP\Day12\dist\index.html133856447860322861 0
+50C:\Users\SHASH\Desktop\FSDPP\Day12\dist\index.html133856452002154337 0
 81C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\public\Config.js133856415826793407 0
 86C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\public\Environment.js133856415827318649 0
 82C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\@parcel\core\lib\public\Symbols.js133856415828939539 0
@@ -4294,5 +4295,5 @@
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\.bin\update-browserslist-db.cmd133856415838310303 0
 79C:\Users\SHASH\Desktop\FSDPP\Day12\node_modules\.bin\update-browserslist-db.ps1133856415838310303 0
 61C:\Users\SHASH\Desktop\FSDPP\Day12\dist\Day12.3464ddca.js.map133856416270634953 0
-57C:\Users\SHASH\Desktop\FSDPP\Day12\dist\index.5baa4167.js133856447933604657 0
-61C:\Users\SHASH\Desktop\FSDPP\Day12\dist\index.5baa4167.js.map133856447933604657 0
+57C:\Users\SHASH\Desktop\FSDPP\Day12\dist\index.5baa4167.js133856452002164359 0
+61C:\Users\SHASH\Desktop\FSDPP\Day12\dist\index.5baa4167.js.map133856452002267888 0

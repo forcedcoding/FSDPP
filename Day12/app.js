@@ -7,6 +7,7 @@ const Greeting = (props) => {
         <>
             <h1>{props.name}</h1>
             <h3>The name is printed above!</h3>
+            
         </>
     );
   };
