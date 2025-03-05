@@ -1,0 +1,69 @@
+/* styles.css */
+
+/* Apply a smooth gradient background to the entire app */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc, #dfe7fd); /* Soft gradient */
+  }
+  
+  /* Greeting Card - Base Style */
+  .greeting-card {
+    width: 320px;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Background color variations */
+  .greeting-card:nth-child(2) { background: linear-gradient(135deg, #ff9a9e, #fad0c4); } /* Pink */
+  .greeting-card:nth-child(3) { background: linear-gradient(135deg, #a18cd1, #fbc2eb); } /* Purple */
+  .greeting-card:nth-child(4) { background: linear-gradient(135deg, #84fab0, #8fd3f4); } /* Green */
+  .greeting-card:nth-child(5) { background: linear-gradient(135deg, #ffecd2, #fcb69f); } /* Orange */
+  
+  /* Heading styles */
+  .greeting-card h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  /* Subheading styles */
+  .greeting-card h3 {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  /* Hover effect */
+  .greeting-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  
+button{
+    width: 50%;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 5 2 7 rgba(0, 0, 0, 0.53);
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+
+}
+button:hover{
+    transform: scale(1.03);
+    background-color: #84fab0;
+    /* transform: perspective(1000px) rotate3d(1, 1, 0, 30deg) translate3d(20px, 20px, 50px); */
+    /* transform: rotate3d(1, 0, 0, 180deg); */
+    /* transform: scale3d(1.2, 1.2, 1.2) translate3d(0, 0, 50px); */
+    transform: rotate3d(0.5, 1, 0, 20deg) translate3d(10px, 10px, 30px);
+}

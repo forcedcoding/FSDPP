@@ -2947,15 +2947,17 @@ $parcel$ReactRefreshHelpers$6024.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _indexCss = require("./index.css");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-const Greeting = (props)=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+const Greeting = ({ name })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "greeting-card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: props.name
+                children: name
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 8,
@@ -2969,69 +2971,99 @@ const Greeting = (props)=>{
                 columnNumber: 13
             }, undefined)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 7,
+        columnNumber: 9
+    }, undefined);
 };
 _c = Greeting;
+const Button = ({ children })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+        children: children
+    }, void 0, false, {
+        fileName: "app.js",
+        lineNumber: 15,
+        columnNumber: 12
+    }, undefined);
+};
+_c1 = Button;
 const App = ()=>{
-    //   return React.createElement("div", {}, "Hello World");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app-container",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                style: {
+                    fontSize: "36px",
+                    color: "#333"
+                },
                 children: "Hello"
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 20,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Greeting, {
-                name: "myName"
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 21,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Greeting, {
-                name: "yourName"
+                name: "myName"
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 22,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Greeting, {
-                name: "hisName"
+                name: "yourName"
             }, void 0, false, {
                 fileName: "app.js",
                 lineNumber: 23,
                 columnNumber: 13
             }, undefined),
-            Greeting({
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Greeting, {
+                name: "hisName"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 24,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Greeting, {
                 name: "anotherName"
-            })
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 25,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Button, {
+                children: "Butt"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 26,
+                columnNumber: 13
+            }, undefined)
         ]
     }, void 0, true, {
         fileName: "app.js",
-        lineNumber: 19,
+        lineNumber: 20,
         columnNumber: 9
     }, undefined);
 };
-_c1 = App;
+_c2 = App;
 const domroot = document.getElementById("root");
 const reactRoot = (0, _clientDefault.default).createRoot(domroot);
 reactRoot.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 31,
+    lineNumber: 33,
     columnNumber: 18
 }, undefined));
-var _c, _c1;
+var _c, _c1, _c2;
 $RefreshReg$(_c, "Greeting");
-$RefreshReg$(_c1, "App");
+$RefreshReg$(_c1, "Button");
+$RefreshReg$(_c2, "App");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj"}],"21dqq":[function(require,module,exports,__globalThis) {
+},{"react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","./index.css":"giGSC"}],"21dqq":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("a569817e6ea559f6");
 
@@ -18801,6 +18833,6 @@ module.exports = require("ee51401569654d91");
     };
 })();
 
-},{"58362d9d82be395f":"21dqq"}]},["aQL8O","eCF1U","igcvL"], "igcvL", "parcelRequire94c2")
+},{"58362d9d82be395f":"21dqq"}],"giGSC":[function() {},{}]},["aQL8O","eCF1U","igcvL"], "igcvL", "parcelRequire94c2")
 
 //# sourceMappingURL=index.5baa4167.js.map
