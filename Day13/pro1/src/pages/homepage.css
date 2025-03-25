@@ -1,0 +1,35 @@
+.card {
+    position: relative; /* Ensures absolute positioning works inside */
+    border: none;
+    border-radius: 10px;
+    width: 300px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(45deg, antiquewhite, white);
+    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.374);
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: rot 3s linear infinite; /* Ensures it rotates every 1s */
+}
