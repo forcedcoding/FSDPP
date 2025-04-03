@@ -35,6 +35,7 @@ export default function App() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        
         <button onClick={handleSubmit}>Submit</button>
         <button onClick={handleDelete}>Clear</button>
       </div>
